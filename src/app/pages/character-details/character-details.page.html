@@ -3,15 +3,19 @@
     <ion-buttons slot="start" defaultHref="/tabs/characters">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ character?.name }}</ion-title>
+    <ion-title>{{ character?.nickname }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngIf="characters" class="movie-card">
-    <ion-card-header>character {{ character.season }}: {{ character.character }}</ion-card-header>
+  <ion-card *ngIf="character" class="movie-card">
+
+    <ion-item>
+      <ion-icon name="card" slot="start"></ion-icon>
+    Season: {{ character.season }} Episode: {{ character.character_id }}
+    </ion-item>
     <ion-card-content>
-    {{ character.season }}
+    {{ character.name }}   
     </ion-card-content>
     </ion-card>
 

@@ -10,15 +10,16 @@ import { ApiService } from '../../services/api.service';
 export class CharacterDetailsPage implements OnInit {
 
   character: any;
+  characterId = null;
 
   constructor(private  activatedRoute: ActivatedRoute, private api: ApiService) { }
 
   ngOnInit() {
       
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
-      this.api.getCharacter(id).subscribe(data => {
-      this.character = data;
-    });
+    this.characterId = this.activatedRoute.snapshot.paramMap.get(`id`);
+      this.api.getCharacter(this.characterId).subscribe(res => {
+      this.character = res[0];
+    })
   }
 
 }

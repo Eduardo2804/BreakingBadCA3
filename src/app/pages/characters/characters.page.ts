@@ -22,7 +22,7 @@ export class CharactersPage implements OnInit {
   }
 
   openDetails(character){
-      let characterId = character.characterId;
+      let characterId = character.char_id;
       this.router.navigateByUrl(`/tabs/characters/${characterId}`);
   }
 }
